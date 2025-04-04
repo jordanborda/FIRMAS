@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "190ba073-1720-4b71-b1b5-087e08578112",
+		"name": "Agente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18152998"
+	},
+	"item": [
+		{
+			"name": "PAdES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "param",
+							"value": "{\n\"signatureFormat\": \"PAdES\",\n\"signatureLevel\": \"B\",\n\"signaturePackaging\": \"\",\n\"webTsa\": \"\",\n\"userTsa\": \"\",\n\"passwordTsa\": \"\",\n\"contactInfo\": \"\",\n\"signatureReason\": \"Trámite en curso\",\n\"signatureStyle\": 1,\n\"stampTextSize\": 14,\n\"stampWordWrap\": 37,\n\"stampPage\": 1,\n\"positionx\": 20,\n\"positiony\": 20,\n\"certificationSignature\": false\n}",
+							"description": "Parámetros de firma PAdES",
+							"type": "text"
+						},
+						{
+							"key": "credential",
+							"value": "12345678",
+							"description": "Credencial registrada en credentials.json",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"description": "Documento PDF a firmar",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "stamp",
+							"description": "Estampa de firma",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/agente/api/signature",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agente",
+						"api",
+						"signature"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "XAdES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "param",
+							"value": "{\n\"signatureFormat\": \"XAdES\",\n\"signatureLevel\": \"B\",\n\"signaturePackaging\": \"\",\n\"webTsa\": \"\",\n\"userTsa\": \"\",\n\"passwordTsa\": \"\"\n}\n",
+							"description": "Parámetros de firma XAdES",
+							"type": "text"
+						},
+						{
+							"key": "credential",
+							"value": "12345678",
+							"description": "Credencial registrada en credentials.json",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"description": "Documento XML a firmar",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/agente/api/signature",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agente",
+						"api",
+						"signature"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CAdES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "param",
+							"value": "{\n\"signatureFormat\": \"CAdES\",\n\"signatureLevel\": \"B\",\n\"signaturePackaging\": \"\",\n\"webTsa\": \"\",\n\"userTsa\": \"\",\n\"passwordTsa\": \"\"\n}\n",
+							"description": "Parámetros de firma CAdES",
+							"type": "text"
+						},
+						{
+							"key": "credential",
+							"value": "12345678",
+							"description": "Credencial registrada en credentials.json",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"description": "Documento a firmar",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/agente/api/signature",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agente",
+						"api",
+						"signature"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/agente/api/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agente",
+						"api",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clean_temp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "credential",
+							"value": "12345678",
+							"description": "Credencial registrada en credentials.json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/agente/api/clean_temp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agente",
+						"api",
+						"clean_temp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,10 @@
+services:
+  agente-automatizado:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs:/home/tomcat/PCM/Agente/log
+    environment:
+      - JAVA_OPTS=-Xmx3g
+    restart: unless-stopped
